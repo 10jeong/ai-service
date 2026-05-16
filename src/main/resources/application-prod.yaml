@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ai-service
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      access: unrestricted
+
+external:
+  prometheus:
+    base-url: ${PROMETHEUS_BASE_URL}
+  llm:
+    base-url: ${LLM_BASE_URL:https://api.openai.com}
+    api-key: ${LLM_API_KEY}
+    model: ${LLM_MODEL:gpt-4o-mini}
+  slack:
+    webhook-url: ${SLACK_WEBHOOK_URL}
+
+jwt:
+  secret: ${JWT_INTERNAL_SECRET}

@@ -1,11 +1,13 @@
 package com.yeoljeong.tripmate.ai.application.dto.command;
 
 import com.yeoljeong.tripmate.ai.domain.alert.Alert;
+import lombok.Builder;
 
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
+@Builder
 public record AlertManagerCommand(
         String receiver,
         String status,
@@ -26,6 +28,7 @@ public record AlertManagerCommand(
                 .toList();
     }
 
+    @Builder
     public record AlertCommand(
             Map<String, String> labels,
             Map<String, String> annotations,

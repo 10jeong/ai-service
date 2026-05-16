@@ -22,7 +22,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        default_schema: order_db
+        default_schema: ai_db
         format_sql: false
         jdbc.time_zone: Asia/Seoul
         jdbc:

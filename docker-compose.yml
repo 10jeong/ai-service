@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ai-service:
+    image: sunsik17/tripmate-ai:latest
+    container_name: ai-service
+    restart: always
+    env_file:
+      - /home/ec2-user/.env
+    ports:
+      - "8080:8080"
+
+networks:
+  backend_network:
+    driver: bridge

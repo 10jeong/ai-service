@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/alerts")
+@RequestMapping("/ai")
 @RequiredArgsConstructor
 public class AlertmanagerWebhookController {
 
     private final AlertProcessingService alertProcessingService;
 
-    @PostMapping("/alertmanager")
+    @PostMapping("/alerts/alertmanager")
     public ResponseEntity<AlertmanagerWebhookResponse> handleAlertmanagerWebhook(
             @RequestBody AlertmanagerWebhookRequest request
     ) {

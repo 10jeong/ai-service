@@ -14,20 +14,15 @@ management:
     tags:
       application: ${spring.application.name}
 
-ai-service:
+external:
   prometheus:
     base-url: ${PROMETHEUS_BASE_URL:http://localhost:9090}
-
   llm:
-    enabled: ${LLM_ENABLED:true}
-    base-url: ${LLM_BASE_URL}
-    api-key: ${LLM_API_KEY}
+    base-url: ${LLM_BASE_URL:https://api.openai.com}
+    api-key: ${LLM_API_KEY:}
     model: ${LLM_MODEL:gpt-4o-mini}
-    timeout-seconds: ${LLM_TIMEOUT_SECONDS:20}
-
   slack:
-    webhook-url: ${SLACK_WEBHOOK_URL}
-    timeout-seconds: ${SLACK_TIMEOUT_SECONDS:10}
+    webhook-url: ${SLACK_WEBHOOK_URL:}
 
   alert:
     call-llm-only-critical: ${CALL_LLM_ONLY_CRITICAL:false}

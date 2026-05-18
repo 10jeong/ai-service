@@ -40,8 +40,8 @@ public class PrometheusMetricQueryAdapter implements PrometheusMetricQueryPort {
         PrometheusQueryResponse response = restClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/api/v1/query")
-                        .queryParam("query", query)
-                        .build())
+                        .queryParam("query", "{query}")
+                        .build(query))
                 .retrieve()
                 .body(PrometheusQueryResponse.class);
 
